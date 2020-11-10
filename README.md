@@ -14,7 +14,7 @@ npm run serve
 ```
 ### Run server
 ```
-json-server db2.json
+npm run database
 ```
 
 ### Lints and fixes files
