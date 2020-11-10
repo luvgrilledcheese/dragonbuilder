@@ -1,24 +1,25 @@
 # dragon_builder
 
+Simple dragon builder app using VueJS, Bulma, json-server, Vuex.
+Made by Richi Tan, Mahdi Adnan Krayem, Franco Hyunh, Alexandru Prisecariu
 ## Project setup
 ```
 npm install
+npm install -g json-server
 ```
 
 ### Compiles and hot-reloads for development
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
+### Run server
 ```
-npm run build
+json-server db2.json
 ```
 
 ### Lints and fixes files
 ```
 npm run lint
+or
+npm run lint -- --fix
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
