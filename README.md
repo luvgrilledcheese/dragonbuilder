@@ -1,4 +1,4 @@
-# dragon_builder
+# Dragon Builder
 
 Simple dragon builder app using VueJS, Bulma, json-server, Vuex.
 Made by Richi Tan, Mahdi Adnan Krayem, Franco Hyunh, Alexandru Prisecariu
