@@ -1,0 +1,44 @@
+{
+  "heads": [
+    {
+      "name": "Veryvery cool head",
+      "img": "imagelink",
+      "id": 1
+    },
+    {
+      "name": "Okay looking head",
+      "id": 4
+    }
+  ],
+  "bodies": [
+    {
+      "name": "Okay looking body",
+      "img": "imagelink",
+      "id": 2
+    },
+    {
+      "name": "Mediocre looking body",
+      "id": 3
+    },
+    {
+      "name": "Okay body",
+      "id": 4
+    }
+  ],
+  "legs": [
+    {
+      "name": "Verycool legs",
+      "img": "imagelink",
+      "id": 0
+    },
+    {
+      "name": "Okay looking legs",
+      "img": "imagelink",
+      "id": 2
+    },
+    {
+      "name": "Ayt looking legs",
+      "id": 3
+    }
+  ]
+}
