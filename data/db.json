@@ -8,6 +8,25 @@
     {
       "name": "Okay looking head",
       "id": 4
+    },
+    {
+      "name": "wowowhead",
+      "img": "imagelink",
+      "id": 3
+    },
+    {
+      "name": "bowowohead",
+      "img": "imagelink",
+      "id": 5
+    },
+    {
+      "name": "kerchow",
+      "img": "imagelink",
+      "id": 6
+    },
+    {
+      "name": "stacey nibba",
+      "id": 7
     }
   ],
   "bodies": [
@@ -23,6 +42,10 @@
     {
       "name": "Okay body",
       "id": 4
+    },
+    {
+      "name": "boiii police",
+      "id": 5
     }
   ],
   "legs": [

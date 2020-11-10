@@ -1,24 +1,34 @@
 <template>
   <div class="home">
     <div class="container">
-      <h1 class="title" style="margin-top:4%">
-        Heads:
-      </h1>
-      <div style="">
-        <Heads/>
+
+      <div class="section">
+        <h1 class="title">
+          Heads:
+        </h1>
+        <div>
+          <Heads/>
+        </div>
       </div>
-      <h1 class="title" style="margin-top:4%">
-        Bodies:
-      </h1>
-      <div style="">
-        <Bodies/>
+
+      <div class="section">
+        <h1 class="title">
+          Body:
+        </h1>
+        <div>
+          <Bodies/>
+        </div>
       </div>
-      <h1 class="title" style="margin-top:4%">
-        Legs:
-      </h1>
-      <div style="">
-        <Legs/>
+
+      <div class="section">
+        <h1 class="title">
+          Legs:
+        </h1>
+        <div>
+          <Legs/>
+        </div>
       </div>
+
     </div>
   </div>
 </template>
@@ -39,6 +49,9 @@ export default {
 </script>
 
 <style scoped>
+.name {
+  color:red !important;
+}
 .parts {
   display: flex;
 }

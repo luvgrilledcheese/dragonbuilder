@@ -1,39 +1,15 @@
 <template>
-  <div class="parts">
+  <div class="columns is-multiline" id="leg">
     <div
-      v-for="leg in allLegs"
-      :key="leg.id"
-      class="box"
-      style="margin-right:2%;"
-    >
-      <article class="media">
-        <div class="media-left">
-          <figure class="image is-64x64">
-            <img
-              src="https://bulma.io/images/placeholders/128x128.png"
-              alt="Image"
-            />
-          </figure>
-        </div>
-        <div class="media-content">
-          <div class="content">
-            <p>
-              <strong style="color: #ffffff;">{{ leg.name }}</strong>
-            </p>
-          </div>
-        </div>
-        <div class="media-right">
-          <button v-on:click="deleteLeg(leg.id)"
-          class="delete" ref="btnDelete"></button>
-          <!-- <i  class="fas fa-trash-alt"></i> -->
-        </div>
-      </article>
+      v-for="leg in allLegs" :key="leg.id" class="column is-4">
+      <Part :name="leg.name"/>
     </div>
   </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
+import Part from './Part.vue';
 
 export default {
   name: 'Legs',
@@ -48,6 +24,9 @@ export default {
     console.log('App this router:', this.$router);
     console.log('App currentRoute:', this.$router.currentRoute.name);
   },
+  components: {
+    Part,
+  },
 };
 </script>
 
@@ -58,5 +37,11 @@ export default {
 .btn {
   border: none;
   background-color: inherit;
+}
+</style>
+
+<style>
+#leg .name {
+  color:rebeccapurple !important;
 }
 </style>

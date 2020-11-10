@@ -2,11 +2,14 @@
   <div class="home">
     <div class="container">
       <h1 class="title">
-        Restaurant Home
+        Dragonbuilder Home
       </h1>
       <p>
         TP1 de Richi Tan, Mahdi Adnan Krayem, Franco Hyunh, Alexandru Prisecariu
       </p>
+      <div class="bd-notification is-success has-text-centered">
+          asdasd
+        </div>
     </div>
   </div>
 </template>
