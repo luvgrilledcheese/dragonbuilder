@@ -8,15 +8,14 @@
         TP1 de Richi Tan, Mahdi Adnan Krayem, Franco Hyunh, Alexandru Prisecariu
       </p>
       <div class="bd-notification is-success has-text-centered">
-          asdasd
-        </div>
+        <img src="../../data/images/heads/1.jpg" alt="">
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-
 export default {
   name: 'Home',
   components: {

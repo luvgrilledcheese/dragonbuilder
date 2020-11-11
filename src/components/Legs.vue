@@ -2,7 +2,7 @@
   <div class="columns is-multiline" id="leg">
     <div
       v-for="leg in allLegs" :key="leg.id" class="column is-4">
-      <Part :name="leg.name"/>
+      <Part :name="leg.name" part="legs" :id="leg.id"/>
     </div>
   </div>
 </template>
@@ -21,8 +21,6 @@ export default {
     this.fetchLegs();
   },
   mounted() {
-    console.log('App this router:', this.$router);
-    console.log('App currentRoute:', this.$router.currentRoute.name);
   },
   components: {
     Part,

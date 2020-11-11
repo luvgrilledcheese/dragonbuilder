@@ -2,7 +2,7 @@
   <div class="columns is-multiline is-3" id="body">
     <div
       class="column is-4" v-for="body in allBodies" :key="body.id">
-        <Part :name="body.name"/>
+        <Part :name="body.name" part="bodies" :id="body.id"/>
     </div>
   </div>
 </template>
@@ -21,8 +21,6 @@ export default {
     this.fetchBodies();
   },
   mounted() {
-    console.log('App this router:', this.$router);
-    console.log('App currentRoute:', this.$router.currentRoute.name);
   },
   components: {
     Part,

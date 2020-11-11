@@ -3,7 +3,7 @@
     <div class="card-image">
       <figure class="image">
         <img
-          src="https://via.placeholder.com/1260x600"
+          v-bind:src="require('../../data/images/'+ partName +'/'+ id + '.jpg')"
           alt="Placeholder image"/>
       </figure>
     </div>
@@ -11,7 +11,6 @@
       <div class="media">
         <div class="media-content">
           <p class="title is-4 has-text-centered name">{{ name }}</p>
-          <!--<p class="subtitle is-6 has-text-centered">@test</p>-->
         </div>
       </div>
     </div>
@@ -21,6 +20,14 @@
 <script>
 export default {
   name: 'Part',
-  props: ['name'],
+  props: ['name', 'id', 'part'],
+  data() {
+    return {
+      partId: this.id,
+      partName: this.part,
+    };
+  },
+  mounted() {
+  },
 };
 </script>

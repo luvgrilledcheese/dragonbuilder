@@ -2,7 +2,6 @@
   "heads": [
     {
       "name": "Veryvery cool head",
-      "img": "imagelink",
       "id": 1
     },
     {
@@ -11,17 +10,14 @@
     },
     {
       "name": "wowowhead",
-      "img": "imagelink",
       "id": 3
     },
     {
       "name": "bowowohead",
-      "img": "imagelink",
       "id": 5
     },
     {
       "name": "kerchow",
-      "img": "imagelink",
       "id": 6
     },
     {
@@ -32,7 +28,6 @@
   "bodies": [
     {
       "name": "Okay looking body",
-      "img": "imagelink",
       "id": 2
     },
     {
@@ -51,12 +46,10 @@
   "legs": [
     {
       "name": "Verycool legs",
-      "img": "imagelink",
       "id": 0
     },
     {
       "name": "Okay looking legs",
-      "img": "imagelink",
       "id": 2
     },
     {

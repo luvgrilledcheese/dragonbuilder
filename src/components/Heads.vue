@@ -3,7 +3,7 @@
     <div
       class="column is-4"
       v-for="head in allHeads" :key="head.id">
-        <Part :name="head.name"/>
+        <Part :name="head.name" part="heads" :id="head.id"/>
     </div>
   </div>
 </template>
@@ -22,8 +22,6 @@ export default {
     this.fetchHeads();
   },
   mounted() {
-    console.log('App this router:', this.$router);
-    console.log('App currentRoute:', this.$router.currentRoute.name);
   },
   components: {
     Part,
