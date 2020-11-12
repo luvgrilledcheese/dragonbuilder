@@ -3,7 +3,7 @@
     <div class="card-image">
       <figure class="image">
         <img
-          v-bind:src="require('../../data/images/'+ partName +'/'+ id + '.jpg')"
+          v-bind:src="'assets/images/' + part + '/' + id + '.png'"
           alt="Placeholder image"/>
       </figure>
     </div>

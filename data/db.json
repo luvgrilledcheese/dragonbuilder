@@ -1,60 +1,84 @@
 {
   "heads": [
     {
-      "name": "Veryvery cool head",
-      "id": 1
+      "id": 1,
+      "name": "Cat"
     },
     {
-      "name": "Okay looking head",
-      "id": 4
+      "id": 2,
+      "name": "Dog"
     },
     {
-      "name": "wowowhead",
-      "id": 3
+      "id": 3,
+      "name": "Dragon"
     },
     {
-      "name": "bowowohead",
-      "id": 5
+      "id": 4,
+      "name": "Fox"
     },
     {
-      "name": "kerchow",
-      "id": 6
+      "id": 5,
+      "name": "Horse"
     },
     {
-      "name": "stacey nibba",
-      "id": 7
+      "id": 6,
+      "name": "Mouse"
+    },
+    {
+      "id": 7,
+      "name": "Pig"
+    },
+    {
+      "id": 8,
+      "name": "Sheep"
+    },
+    {
+      "id": 9,
+      "name": "Raccoon"
     }
   ],
   "bodies": [
     {
-      "name": "Okay looking body",
-      "id": 2
+      "id": 1,
+      "name": "Casual"
     },
     {
-      "name": "Mediocre looking body",
-      "id": 3
+      "id": 2,
+      "name": "Chubby"
     },
     {
-      "name": "Okay body",
-      "id": 4
+      "id": 3,
+      "name": "Muscular"
     },
     {
-      "name": "boiii police",
-      "id": 5
+      "id": 4,
+      "name": "Shirt"
     }
   ],
   "legs": [
     {
-      "name": "Verycool legs",
-      "id": 0
+      "id": 1,
+      "name": "Cool Laydown"
     },
     {
-      "name": "Okay looking legs",
-      "id": 2
+      "id": 2,
+      "name": "Fashion Cat"
     },
     {
-      "name": "Ayt looking legs",
-      "id": 3
+      "id": 3,
+      "name": "Frogged"
+    },
+    {
+      "id": 4,
+      "name": "Duckie Feet"
+    },
+    {
+      "id": 5,
+      "name": "Satdown Frog"
+    },
+    {
+      "id": 6,
+      "name": "Tippy Skity"
     }
   ]
 }
