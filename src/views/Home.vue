@@ -53,7 +53,7 @@
           </div>
           <div class="column is-5">
             <div class="card">
-              <DemoCreator />
+              <DemoBuilderV2 />
             </div>
           </div>
         </div>
@@ -63,12 +63,12 @@
 </template>
 
 <script>
-import DemoCreator from '../components/DemoCreator.vue';
+import DemoBuilderV2 from '../components/DemoBuilderV2.vue';
 // @ is an alias to /src
 export default {
   name: 'Home',
   components: {
-    DemoCreator,
+    DemoBuilderV2,
   },
 };
 </script>

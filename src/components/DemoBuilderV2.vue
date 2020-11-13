@@ -5,7 +5,7 @@
       id="dragonBuilder"
       width="400"
       height="450"
-      style="border: 0px solid black; border-radius:15px">
+      style="border: 0px solid black; border-radius:2px">
     </canvas>
   </div>
 </template>
@@ -27,12 +27,16 @@ const width = CUSTOM_WIDTH;
 const scaleY = CUSTOM_WIDTH / ORIGINAL_WIDTH;
 
 let currentDrawing;
-let previousDrawing;
-let currentOpacity = 1;
-let previousOpacity = 0;
+const ACCELERATION = -0.46;
+const BASE_VELOCITY = 20;
+let accel = ACCELERATION;
+let velocity = BASE_VELOCITY;
+let absX = 0;
+
+let xCondition = 400;
 
 export default {
-  name: 'DemoBuilder',
+  name: 'DemoBuilderV2',
   data() {
     return {
       id: undefined,
@@ -59,7 +63,7 @@ export default {
     animate() {
       if (wait) {
         tick += 1;
-        if (tick >= 60) {
+        if (tick >= 120) {
           wait = false;
           tick = 0;
         }
@@ -69,55 +73,42 @@ export default {
 
       this.draw();
 
-      currentOpacity += 0.025;
-      previousOpacity -= 0.025;
+      if (absX >= xCondition) {
+        if (xCondition === 0) {
+          wait = true;
+          tick = 0;
 
-      if (previousOpacity <= 0) {
-        previousDrawing.headIndex = currentDrawing.headIndex;
-        previousDrawing.bodyIndex = currentDrawing.bodyIndex;
-        previousDrawing.legIndex = currentDrawing.legIndex;
-        currentDrawing = this.generatePersona();
-        currentOpacity = 0;
-        previousOpacity = 1;
+          xCondition = 400;
+          absX = 0;
 
-        wait = true;
+          velocity = BASE_VELOCITY;
+          accel = ACCELERATION;
+        } else {
+          currentDrawing = this.generatePersona();
+          xCondition = 0;
+          absX = -400;
+          velocity = BASE_VELOCITY;
+
+          // Il a un petit probleme de calcul qui ne permet pas
+          // de retourner exactement à la position initiale
+          // on soustrait 0.01 pour m'assurer que ca va venir à la position initiale
+          accel = ACCELERATION - 0.02;
+        }
+      } else {
+        velocity += accel;
+        absX += velocity;
+        if (absX >= xCondition) absX = xCondition;
       }
       this.id = window.requestAnimationFrame(this.animate);
-      //  intervalId = setInterval(this.draw, 16);
     },
 
     draw() {
-      this.ctx.clearRect(0, 0, CUSTOM_WIDTH, CUSTOM_HEIGHT);
+      this.ctx.fillStyle = '#eaeaea';
+      this.ctx.fillRect(0, 0, CUSTOM_WIDTH, CUSTOM_HEIGHT);
 
-      this.ctx.globalAlpha = previousOpacity;
-      this.ctx.drawImage(
-        this.images[previousDrawing.headIndex],
-        0,
-        0,
-        width,
-        HEIGHT_HEAD * scaleY,
-      );
-
-      this.ctx.drawImage(
-        this.images[previousDrawing.bodyIndex],
-        0,
-        HEIGHT_HEAD * scaleY,
-        width,
-        HEIGHT_BODY * scaleY,
-      );
-
-      this.ctx.drawImage(
-        this.images[previousDrawing.legIndex],
-        0,
-        (HEIGHT_BODY + HEIGHT_HEAD) * scaleY,
-        width,
-        HEIGHT_LEGS * scaleY,
-      );
-
-      this.ctx.globalAlpha = currentOpacity;
       this.ctx.drawImage(
         this.images[currentDrawing.headIndex],
-        0,
+        absX,
         0,
         width,
         HEIGHT_HEAD * scaleY,
@@ -125,7 +116,7 @@ export default {
 
       this.ctx.drawImage(
         this.images[currentDrawing.bodyIndex],
-        0,
+        -absX,
         HEIGHT_HEAD * scaleY,
         width,
         HEIGHT_BODY * scaleY,
@@ -133,7 +124,7 @@ export default {
 
       this.ctx.drawImage(
         this.images[currentDrawing.legIndex],
-        0,
+        absX,
         (HEIGHT_BODY + HEIGHT_HEAD) * scaleY,
         width,
         HEIGHT_LEGS * scaleY,
@@ -162,7 +153,6 @@ export default {
           this.images = objImages;
 
           currentDrawing = this.generatePersona();
-          previousDrawing = this.generatePersona();
           this.draw();
 
           this.tick = 30; // Run le first transition plus tot
