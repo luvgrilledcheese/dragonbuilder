@@ -80,5 +80,36 @@
       "id": 6,
       "name": "Tippy Skity"
     }
+  ],
+
+  "dragons": [
+    {
+      "id": 1,
+      "name": "Coolie Cat",
+      "headId": 1,
+      "bodyId": 1,
+      "legId": 1
+    },
+    {
+      "id": 2,
+      "name": "Muscular Horse",
+      "headId": 5,
+      "bodyId": 3,
+      "legId": 2
+    },
+    {
+      "id": 3,
+      "name": "Fatass Mouse",
+      "headId": 6,
+      "bodyId": 2,
+      "legId": 4
+    },
+    {
+      "id": 4,
+      "name": "Doggie Poggie",
+      "headId": 2,
+      "bodyId": 4,
+      "legId": 6
+    }
   ]
 }

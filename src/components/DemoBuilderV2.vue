@@ -1,7 +1,7 @@
 <template>
-  <div class="section has-text-centered">
-    <p class="title is-4 has-text-black-ter">Model Randomiser</p>
+  <div class="section has-text-centered notification has-background-grey-dark">
     <canvas
+      ref="canvas"
       id="dragonBuilder"
       width="400"
       height="450"
@@ -15,13 +15,20 @@ import { mapGetters, mapActions } from 'vuex';
 
 let tick = 0;
 let wait = true;
+
+// animation for now only works with scale 450
+// because i am dummy dumb i have to fix this
+const SCALE = 450;
+
+const RATIO = 8 / 9;
+
 const ORIGINAL_WIDTH = 800;
 const HEIGHT_HEAD = 319;
 const HEIGHT_BODY = 328;
 const HEIGHT_LEGS = 253;
 
-const CUSTOM_WIDTH = 400;
-const CUSTOM_HEIGHT = 450;
+const CUSTOM_WIDTH = 1 * SCALE * RATIO;
+const CUSTOM_HEIGHT = 1 * SCALE;
 
 const width = CUSTOM_WIDTH;
 const scaleY = CUSTOM_WIDTH / ORIGINAL_WIDTH;
@@ -162,8 +169,11 @@ export default {
     },
 
     initiateSetup() {
-      this.c = document.getElementById('dragonBuilder');
-      this.ctx = this.c.getContext('2d');
+      this.ctx = this.$refs.canvas.getContext('2d');
+      this.$refs.canvas.setAttribute('width', CUSTOM_WIDTH);
+      this.$refs.canvas.setAttribute('height', CUSTOM_HEIGHT);
+      // this.c = document.getElementById('dragonBuilder');
+      // this.ctx = this.c.getContext('2d');
 
       for (let i = 0; i < this.allHeads.length; i += 1) {
         this.allUrls.push(`./assets/images/heads/${this.allHeads[i].id}.png`);

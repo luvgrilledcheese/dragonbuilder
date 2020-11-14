@@ -3,6 +3,7 @@
     <div class="navbar-menu is-transparent">
       <div class="navbar-start">
         <router-link to="/" class="navbar-item noHover">Home</router-link>
+        <router-link to="/Dragons" class="navbar-item noHover">Dragons</router-link>
         <router-link to="/Parts" class="navbar-item noHover">Parts</router-link>
         <router-link to="/About" class="navbar-item noHover">About</router-link>
       </div>

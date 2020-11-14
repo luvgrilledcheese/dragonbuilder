@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import Parts from '../views/Parts.vue';
 import Admin from '../views/Admin.vue';
+import Dragons from '../views/Dragons.vue';
 
 Vue.use(VueRouter);
 
@@ -29,6 +30,11 @@ const routes = [
     path: '/Admin',
     name: 'Admin',
     component: Admin,
+  },
+  {
+    path: '/Dragons',
+    name: 'Dragons',
+    component: Dragons,
   },
 ];
 

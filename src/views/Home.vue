@@ -53,7 +53,23 @@
           </div>
           <div class="column is-5">
             <div class="card">
-              <DemoBuilderV2 />
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-left">
+                    <p class="title is-4">Model Randomizer</p>
+                     <p class="subtitle is-6">
+                      This is next generation technology.</p>
+                  </div>
+                </div>
+
+                <div class="content">
+                  This demo shows the amazing dragons you can
+                  make. Explore the parts you want to use with our maker.
+                </div>
+              </div>
+              <div class="card-image">
+                <DemoBuilderV2 />
+              </div>
             </div>
           </div>
         </div>
@@ -78,6 +94,10 @@ import DemoBuilderV2 from '../components/DemoBuilderV2.vue';
 // @ is an alias to /src
 export default {
   name: 'Home',
+  data() {
+    return {
+    };
+  },
   components: {
     DemoBuilderV2,
   },
