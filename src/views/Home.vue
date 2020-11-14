@@ -57,6 +57,17 @@
             </div>
           </div>
         </div>
+        <div class="columns">
+          <img class="column" src="../../data/images/user_profile/dragon.jpg"/>
+          <p class="future is-two-thirds">The real purpose of the project
+            is to realise a library of dragons that can
+            generate more models than the ones offered by
+            the library by mixing them. Limited ressources like time
+            allowed us to create these models themes.
+            Here is a hint of what the real models
+            would have looked like...
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -76,5 +87,15 @@ export default {
 <style scoped>
 h1 {
   margin-top: 4%;
+}
+.future{
+  width: 50%;
+  height: min-content;
+  text-align: justify;
+  background-color: rgb(50, 151, 219);
+  padding: 45px;
+  margin: 50px auto;
+  border-radius: 5px;
+  color: white;
 }
 </style>
