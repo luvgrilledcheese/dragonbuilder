@@ -58,7 +58,7 @@
           </div>
         </div>
         <div class="columns">
-          <img class="column" src="require('../data/images/user_profile/dragon.jpg')"/>
+          <img class="column" :src="require('../../data/images/user_profile/dragon.jpg')"/>
           <p class="future is-two-thirds">The real purpose of the project
             is to realise a library of dragons that can
             generate more models than the ones offered by
