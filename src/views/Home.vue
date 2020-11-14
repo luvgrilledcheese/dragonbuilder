@@ -59,11 +59,11 @@
         </div>
         <div class="columns">
           <img class="column" :src="require('../../data/images/user_profile/dragon.jpg')"/>
-          <p class="future is-two-thirds">The real purpose of the project
-            is to realise a library of dragons that can
+          <p class="future is-two-thirds">The project intent
+            was to realise a library of dragons that can
             generate more models than the ones offered by
-            the library by mixing them. Limited ressources like time
-            allowed us to create these models themes.
+            the library by mixing them. By Limited ressources like time
+            we created these models themes.
             Here is a hint of what the real models
             would have looked like...
           </p>
