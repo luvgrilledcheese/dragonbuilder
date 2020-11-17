@@ -2,7 +2,10 @@
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-menu is-transparent">
       <div class="navbar-start">
-        <router-link to="/" class="navbar-item noHover">Home</router-link>
+        <router-link to="/" tag="img"
+        v-bind:src="require('../../data/images/user_profile/logo.png')"
+        class="navbar-item noHover">
+        </router-link>
         <router-link to="/Dragons" class="navbar-item noHover">Dragons</router-link>
         <router-link to="/Parts" class="navbar-item noHover">Parts</router-link>
         <router-link to="/About" class="navbar-item noHover">About</router-link>
@@ -35,6 +38,7 @@ nav {
   color: #f2f6fa;
   background-color: #197278;
   border: none;
+  margin-right: 10px;
 }
 
 .button:hover {
@@ -68,4 +72,8 @@ a.navbar-item.is-active,
   transition: all 0.25s;
 }
 
+img {
+  width: 200px;
+  align-content: center;
+}
 </style>
