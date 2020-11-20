@@ -5,7 +5,7 @@
         <header class="header">
            <div class="header-titles">
               <h1 class="title">
-                Dragon Creator
+                Edit your dragon
               </h1>
               <p class="subtitle is-4">
                 Use it to create your own dragon.
@@ -16,7 +16,7 @@
       <div class="section">
         <div class="columns is-4 is-multiline level" id="body">
 
-              <div class="column is-4">
+            <div class="column is-4">
                 <!-- Head -->
                 <div class="field fullwidth">
                   <div class="control has-icons-left">
@@ -67,22 +67,23 @@
                     </div>
                   </div>
                 </div>
-
-                <div class="control column is-12">
+                <hr>
                   <button class="button is-large is-fullwidth" disabled
-                  id="submit" @click="createDragon()">Create dragon!</button>
-                </div>
-              </div>
-
-              <div class="column is-8 has-text-centered">
+                  id="submit" @click="fxEditDragon()">Finish Edit!</button>
+                <br>
+                <button class="button is-large is-fullwidth is-danger"
+                 @click="fxRemoveDragon()">Delete Dragon</button>
+            </div>
+            <div class="column is-8 has-text-centered">
                 <div class="field">
                   <div class="control">
                     <input v-model="dragon.name" class="input is-large title has-text-centered"
                     type="text" placeholder="Name your dragon...">
                   </div>
                 </div>
-                <Dragon :dragon="dragon" :scale="600" :isNameVisible="false"/>
-              </div>
+                <Dragon :dragon="dragon" :scale="600"/>
+            </div>
+
         </div>
       </div>
     </div>
@@ -93,8 +94,16 @@ import { mapGetters, mapActions } from 'vuex';
 import Dragon from '../components/Dragon.vue';
 
 export default {
-  name: 'Create',
+  name: 'Edit',
+  props: {
+    dragonId: {
+      type: Number,
+      required: true,
+    },
+  },
   data: () => ({
+    self: null,
+    // id: this.dragonId,
     dragon: {
       name: '',
       headId: 1,
@@ -108,25 +117,36 @@ export default {
   },
 
   methods: {
-    ...mapActions(['fetchHeads', 'fetchBodies', 'fetchLegs', 'addDragon']),
+    ...mapActions(['fetchHeads', 'fetchBodies', 'fetchLegs', 'fetchDragons', 'deleteDragon', 'findDragon', 'updateDragon']),
 
-    createDragon() {
-      this.addDragon(this.dragon).then(() => {
-        this.$router.push('Dragons');
+    fxEditDragon() {
+      this.updateDragon(this.dragon).then(() => {
+        this.$router.push('/Dragons');
+      });
+    },
+
+    fxRemoveDragon() {
+      this.deleteDragon(this.dragonId).then(() => {
+        this.$router.push('/Dragons');
       });
     },
   },
 
-  computed: mapGetters(['allHeads', 'allBodies', 'allLegs']),
+  computed: mapGetters(['allHeads', 'allBodies', 'allLegs', 'allDragons']),
 
   created() {
+    this.self = this;
     this.fetchHeads();
     this.fetchBodies();
     this.fetchLegs();
   },
 
   mounted() {
-
+    this.fetchDragons().then(() => {
+      this.findDragon(this.self.dragonId).then((x) => {
+        this.dragon = x;
+      });
+    });
   },
 
   watch: {

@@ -4,7 +4,7 @@
       <div class="navbar-start">
         <router-link to="/" tag="img"
         v-bind:src="require('../../data/images/user_profile/logo.png')"
-        class="navbar-item noHover">
+        class="navbar-item noHover is-clickable">
         </router-link>
         <router-link to="/Dragons" class="navbar-item noHover">Dragons</router-link>
         <router-link to="/Create" class="navbar-item noHover">Create</router-link>

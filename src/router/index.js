@@ -5,6 +5,7 @@ import Parts from '../views/Parts.vue';
 import Admin from '../views/Admin.vue';
 import Dragons from '../views/Dragons.vue';
 import Create from '../views/Create.vue';
+import Edit from '../views/Edit.vue';
 
 Vue.use(VueRouter);
 
@@ -41,6 +42,12 @@ const routes = [
     path: '/Create',
     name: 'Create',
     component: Create,
+  },
+  {
+    path: '/Edit/:dragonId',
+    name: 'Edit',
+    component: Edit,
+    props: true,
   },
 ];
 

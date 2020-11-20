@@ -16,7 +16,9 @@
       <div class="section">
         <div class="columns is-multiline is-3" id="body">
           <div class="column is-3" v-for="dragon in allDragons" :key="dragon.id">
-            <Dragon  :dragon="dragon" :scale="300"/>
+            <router-link :to="{name: 'Edit', params: { dragonId: dragon.id } }">
+              <Dragon :dragon="dragon" :scale="300" :isNameVisible="true"/>
+            </router-link>
           </div>
         </div>
       </div>
