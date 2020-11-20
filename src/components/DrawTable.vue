@@ -33,6 +33,7 @@ export default {
     ctx.strokeStyle = 'black';
     const onPaint = function () {
       ctx.lineTo(mouse.x, mouse.y);
+      ctx.lineWidth = 5;
       ctx.stroke();
     };
 
