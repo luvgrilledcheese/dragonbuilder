@@ -1,13 +1,16 @@
 @import "../../node_modules/bulma/bulma.sass";
 
-// body {
-//     background-color: #ffffff;
-//     height: 100vh;
-// }
-// .title {
-//     color: #363636;
-// }
-// .box {
-//     background-color: #197278;
-//     color: #EDE6E3;
-// }
+// .control.is-fullwidth {
+//     display: flex;
+  
+//     .dropdown-item{
+//       width: 100%;
+//     }
+//   }
+
+// On utilise ca pour le Create.vue
+.fullwidth {
+    .select, select{
+      width: 100%;
+    }
+}

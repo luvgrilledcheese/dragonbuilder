@@ -4,6 +4,7 @@ import Home from '../views/Home.vue';
 import Parts from '../views/Parts.vue';
 import Admin from '../views/Admin.vue';
 import Dragons from '../views/Dragons.vue';
+import Create from '../views/Create.vue';
 
 Vue.use(VueRouter);
 
@@ -35,6 +36,11 @@ const routes = [
     path: '/Dragons',
     name: 'Dragons',
     component: Dragons,
+  },
+  {
+    path: '/Create',
+    name: 'Create',
+    component: Create,
   },
 ];
 

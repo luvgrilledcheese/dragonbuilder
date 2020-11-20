@@ -16,7 +16,7 @@
       <div class="section">
         <div class="columns is-multiline is-3" id="body">
           <div class="column is-3" v-for="dragon in allDragons" :key="dragon.id">
-            <Dragon  :dragon="dragon"/>
+            <Dragon  :dragon="dragon" :scale="300"/>
           </div>
         </div>
       </div>
