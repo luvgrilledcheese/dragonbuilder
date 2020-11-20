@@ -11,6 +11,7 @@
               class="input">
             </div>
           </div>
+            <DrawTable/>
           <div class="control">
             <input type="submit" value="New head" class="button">
           </div>
@@ -20,9 +21,11 @@
 
 <script>
 import { mapActions } from 'vuex';
+import DrawTable from '@/components/DrawTable.vue';
 
 export default {
   name: 'AddHead',
+  components: { DrawTable },
   data() {
     return {
       name: '',
