@@ -7,6 +7,7 @@
         class="navbar-item noHover">
         </router-link>
         <router-link to="/Dragons" class="navbar-item noHover">Dragons</router-link>
+        <router-link to="/Create" class="navbar-item noHover">Create</router-link>
         <router-link to="/Parts" class="navbar-item noHover">Parts</router-link>
         <router-link to="/About" class="navbar-item noHover">About</router-link>
       </div>

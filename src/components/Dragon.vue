@@ -21,24 +21,24 @@
 
 <script>
 // On peut changer cette valeur pour changer la grandeur des canvas.
-const SCALE = 300;
+let SCALE;
 
-const RATIO = 8 / 9;
+let RATIO;
 
-const CUSTOM_WIDTH = 1 * SCALE * RATIO;
-const CUSTOM_HEIGHT = 1 * SCALE;
+let CUSTOM_WIDTH;
+let CUSTOM_HEIGHT;
 
-const ORIGINAL_WIDTH = 800;
-const HEIGHT_HEAD = 319;
-const HEIGHT_BODY = 328;
-const HEIGHT_LEGS = 253;
+let ORIGINAL_WIDTH;
+let HEIGHT_HEAD;
+let HEIGHT_BODY;
+let HEIGHT_LEGS;
 
-const width = CUSTOM_WIDTH; // Les images ont tous le meme width
-const scaleY = CUSTOM_WIDTH / ORIGINAL_WIDTH; // Les images ont des different heights prédéfinis
+let width;
+let scaleY;
 
 export default {
   name: 'Dragon',
-  props: ['dragon'],
+  props: ['dragon', 'scale'],
   data() {
     return {
       images: [],
@@ -56,6 +56,7 @@ export default {
     },
 
     loadAllImages() {
+      this.images = [];
       this.images.push(this.loadImage(`./assets/images/heads/${this.dragon.headId}.png`));
       this.images.push(this.loadImage(`./assets/images/bodies/${this.dragon.bodyId}.png`));
       this.images.push(this.loadImage(`./assets/images/legs/${this.dragon.legId}.png`));
@@ -94,19 +95,45 @@ export default {
         HEIGHT_LEGS * scaleY,
       );
     },
+
+    // eslint-disable-next-line no-unused-vars
+    redraw(newVal, oldVal) {
+      this.loadAllImages();
+    },
   },
 
   created() {
   },
 
   mounted() {
+    // Setup size
+    SCALE = this.scale;
+
+    RATIO = 8 / 9;
+
+    CUSTOM_WIDTH = 1 * SCALE * RATIO;
+    CUSTOM_HEIGHT = 1 * SCALE;
+
+    ORIGINAL_WIDTH = 800;
+    HEIGHT_HEAD = 319;
+    HEIGHT_BODY = 328;
+    HEIGHT_LEGS = 253;
+
+    width = CUSTOM_WIDTH; // Les images ont tous le meme width
+    scaleY = CUSTOM_WIDTH / ORIGINAL_WIDTH; // Les images ont des different heights prédéfinis
+
+    // Get canvas
     this.$refs.canvas.setAttribute('width', CUSTOM_WIDTH);
     this.$refs.canvas.setAttribute('height', CUSTOM_HEIGHT);
     this.ctx = this.$refs.canvas.getContext('2d');
-    // this.c = document.getElementById('dragonBuilder');
-    // this.ctx = this.c.getContext('2d');
 
     this.loadAllImages();
+  },
+
+  watch: {
+    'dragon.headId': 'redraw',
+    'dragon.bodyId': 'redraw',
+    'dragon.legId': 'redraw',
   },
 };
 </script>

@@ -31,7 +31,7 @@ export default {
     ctx.lineCap = 'round';
 
     ctx.strokeStyle = 'black';
-    const onPaint = function () {
+    const onPaint = () => {
       ctx.lineTo(mouse.x, mouse.y);
       ctx.stroke();
     };
