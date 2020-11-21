@@ -35,7 +35,7 @@
     {
       "id": 9,
       "name": "Raccoon"
-    } 
+    }
   ],
   "bodies": [
     {
@@ -83,60 +83,11 @@
   ],
   "dragons": [
     {
-      "id": 1,
-      "name": "FAT BOI CAT",
-      "headId": 1,
-      "bodyId": 2,
-      "legId": 1
-    },
-    {
-      "id": 2,
-      "name": "Muscular Horse",
-      "headId": 5,
-      "bodyId": 3,
-      "legId": 2
-    },
-    {
       "id": 3,
       "name": "Not A Fatass Mouse",
       "headId": 6,
       "bodyId": 3,
       "legId": 4
-    },
-    {
-      "id": 4,
-      "name": "Doggie Poggie",
-      "headId": 2,
-      "bodyId": 4,
-      "legId": 6
-    },
-    {
-      "name": "Stacey",
-      "headId": 1,
-      "bodyId": 3,
-      "legId": 3,
-      "id": 5
-    },
-    {
-      "name": "Racoon Strong Together",
-      "headId": 9,
-      "bodyId": 3,
-      "legId": 4,
-      "id": 7
-    },
-    {
-      "name": "Mega Pig",
-      "headId": 7,
-      "bodyId": 3,
-      "legId": 2,
-      "id": 8
-    },
-    {
-      "name": "Horsieman",
-      "headId": 5,
-      "bodyId": 3,
-      "legId": 4,
-      "id": 9
     }
   ]
 }

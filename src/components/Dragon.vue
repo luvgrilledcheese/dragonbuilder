@@ -1,25 +1,21 @@
 <template>
-    <div class="box is-horizontal-center">
+    <div class="box is-horizontal-center" @mouseover="hover = true" @mouseleave="hover = false">
       <p class="subtitle is-4 has-text-dark has-text-centered">{{showName}}</p>
       <canvas
         ref="canvas"
         style="border: 0px solid #d0d0d0; border-radius:3px">
       </canvas>
       <br>
-      <div class="">
-        <!-- <span class="icon has-text-danger">
-          <div class="button media-left">
-              <i class="fas fa-ban"></i><i>Delete</i>
-          </div>
-          <div class="button media-right">
-              <i class="fas fa-ban"></i><i>Edit</i>
-          </div>
-        </span> -->
-      </div>
+        <div class="" @click="fxRemoveDragon()" @click.capture="clicked">
+          <p style="text-align: right;" :class="{ active: hover , inactive: !hover }">
+            <i class="fas fa-times fa-lg"></i>
+          </p>
+        </div>
     </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 // On peut changer cette valeur pour changer la grandeur des canvas.
 let SCALE;
 
@@ -43,6 +39,7 @@ export default {
     return {
       images: [],
       ctx: null,
+      hover: false,
     };
   },
 
@@ -54,6 +51,12 @@ export default {
   },
 
   methods: {
+    ...mapActions(['deleteDragon']),
+    fxRemoveDragon() {
+      this.deleteDragon(this.dragon.id).then(() => {
+        this.$router.push('/Dragons');
+      });
+    },
     loadImage(url) {
       return new Promise((fulfill) => {
         const imageObj = new Image();
@@ -144,3 +147,26 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.active {
+  opacity: 100%;
+}
+
+.inactive {
+  opacity: 0;
+}
+
+.hide {
+  display: none;
+}
+
+.fa-times {
+  color: grey;
+}
+
+.fa-times:hover {
+  color: red;
+}
+
+</style>

@@ -53,11 +53,6 @@
                     <i class="fas fa-chess-pawn"></i>
                   </div>
                 </div>
-
-                <div class="control column is-12">
-                  <button class="button is-large is-fullwidth" disabled
-                  id="submit" @click="createDragon()">Create dragon!</button>
-                </div>
               </div>
 
               <!-- Legs -->
@@ -80,6 +75,16 @@
                   </div>
                 </div>
               </div>
+              <div class="control column is-12">
+                  <button
+                    class="button is-large is-fullwidth"
+                    disabled
+                    id="submit"
+                    @click="createDragon()"
+                  >
+                    Create dragon!
+                  </button>
+                </div>
             </div>
           </div>
           <div class="column is-8 has-text-centered">
@@ -94,11 +99,6 @@
               </div>
             </div>
             <Dragon :dragon="dragon" :scale="600" />
-          </div>
-          <div class="control column is-12">
-            <button class="button is-large is-fullwidth" disabled id="submit">
-              Create dragon!
-            </button>
           </div>
         </div>
       </div>
