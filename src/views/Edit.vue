@@ -10,7 +10,6 @@
         </header>
       </div>
       <div class="section">
-
         <div class="tile is-ancestor">
           <div class="tile is-vertical is-4">
             <div class="tile">
@@ -127,9 +126,9 @@ export default {
     // id: this.dragonId,
     dragon: {
       name: '',
-      headId: 1,
-      bodyId: 1,
-      legId: 1,
+      headId: null,
+      bodyId: null,
+      legId: null,
     },
   }),
 
