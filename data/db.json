@@ -35,38 +35,7 @@
     {
       "id": 9,
       "name": "Raccoon"
-<<<<<<< HEAD
-    },
-    {
-      "name": "",
-      "id": 10
-    },
-    {
-      "name": "",
-      "id": 11
-    },
-    {
-      "name": "fdszg",
-      "id": 12
-    },
-    {
-      "name": "Bonjour",
-      "id": 13
-    },
-    {
-      "name": "Bonjour",
-      "id": 14
-    },
-    {
-      "name": "",
-      "id": 15
-    },
-    {
-      "name": "Nom",
-      "id": 16
-=======
->>>>>>> 10ff52d0c8e8aa7442b9438ab390a6f3d57a8db6
-    }
+    } 
   ],
   "bodies": [
     {
