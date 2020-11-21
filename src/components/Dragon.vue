@@ -115,10 +115,14 @@ export default {
   },
 
   mounted() {
-    this.$refs.dragDelete.addEventListener('click', (e) => {
-      e.stopPropagation();
-      this.deleteDragon(this.dragon.id);
-    });
+    if (this.isNameVisible) {
+      this.$refs.dragDelete.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.deleteDragon(this.dragon.id);
+      });
+    } else {
+      this.$refs.dragDelete.remove();
+    }
     // Setup size
     SCALE = this.scale;
 
