@@ -53,6 +53,18 @@
     {
       "id": 4,
       "name": "Shirt"
+    },
+    {
+      "id": 5,
+      "name": "Tuxedo"
+    },
+    {
+      "id": 6,
+      "name": "Jogging Female"
+    },
+    {
+      "id": 7,
+      "name": "Tank Top & Safety Guns"
     }
   ],
   "legs": [
@@ -92,7 +104,7 @@
     {
       "id": 2,
       "name": "Muscular Horse",
-      "headId": 5,
+      "headId": 8,
       "bodyId": 3,
       "legId": 2
     },
@@ -113,7 +125,7 @@
     {
       "name": "Stacey",
       "headId": 1,
-      "bodyId": 3,
+      "bodyId": 5,
       "legId": 3,
       "id": 5
     },
@@ -127,14 +139,14 @@
     {
       "name": "Mega Pig",
       "headId": 7,
-      "bodyId": 3,
+      "bodyId": 2,
       "legId": 2,
       "id": 8
     },
     {
       "name": "Horsieman",
       "headId": 5,
-      "bodyId": 3,
+      "bodyId": 7,
       "legId": 4,
       "id": 9
     }
