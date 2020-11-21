@@ -137,17 +137,10 @@
       "id": 7
     },
     {
-      "name": "Mega Pig",
-      "headId": 7,
-      "bodyId": 2,
-      "legId": 2,
-      "id": 8
-    },
-    {
-      "name": "Horsieman",
-      "headId": 5,
-      "bodyId": 7,
-      "legId": 4,
+      "name": "Stacey man",
+      "headId": 1,
+      "bodyId": 4,
+      "legId": 1,
       "id": 9
     }
   ]

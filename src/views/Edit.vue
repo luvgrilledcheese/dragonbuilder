@@ -77,7 +77,8 @@
             <div class="column is-8 has-text-centered">
                 <div class="field">
                   <div class="control">
-                    <input v-model="dragon.name" class="input is-large title has-text-centered"
+                    <input v-model="dragon.name" id="name" class="input is-large title
+                    has-text-centered"
                     type="text" placeholder="Name your dragon...">
                   </div>
                 </div>
@@ -153,12 +154,15 @@ export default {
     // eslint-disable-next-line no-unused-vars
     'dragon.name': (newVal, oldVal) => {
       const button = document.getElementById('submit');
+      const nameInput = document.getElementById('name');
       if (newVal === '') {
         button.classList.remove('is-success');
         button.setAttribute('disabled', true);
+        nameInput.classList.add('is-danger');
       } else {
         button.classList.add('is-success');
         button.removeAttribute('disabled');
+        nameInput.classList.remove('is-danger');
       }
     },
   },

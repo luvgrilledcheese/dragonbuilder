@@ -16,9 +16,11 @@
       <div class="section">
         <div class="columns is-multiline is-3" id="body">
           <div class="column is-3" v-for="dragon in allDragons" :key="dragon.id">
-            <router-link :to="{name: 'Edit', params: { dragonId: dragon.id } }">
-              <Dragon :dragon="dragon" :scale="300" :isNameVisible="true"/>
-            </router-link>
+            <!-- <router-link :to="{name: 'Edit', params: { dragonId: dragon.id } }"> -->
+              <div class="router-click" @click="routeToEdit(dragon.id)">
+                <Dragon :dragon="dragon" :scale="300" :isNameVisible="true"/>
+              </div>
+            <!-- </router-link> -->
           </div>
         </div>
       </div>
@@ -38,12 +40,21 @@ export default {
 
   methods: {
     ...mapActions(['fetchDragons', 'getDragon', 'addDragon', 'removeDragon']),
+    routeToEdit(id) {
+      this.$router.push({
+        name: 'Edit',
+        params: { dragonId: id },
+      });
+    },
   },
 
   computed: mapGetters(['allDragons']),
 
   created() {
     this.fetchDragons();
+  },
+
+  mounted() {
   },
 };
 </script>

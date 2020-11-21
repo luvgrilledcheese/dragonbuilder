@@ -6,7 +6,7 @@
         style="border: 0px solid #d0d0d0; border-radius:3px">
       </canvas>
       <br>
-        <div class="" @click="fxRemoveDragon()" @click.capture="clicked">
+        <div ref="dragDelete">
           <p style="text-align: right;" :class="{ active: hover , inactive: !hover }">
             <i class="fas fa-times fa-lg"></i>
           </p>
@@ -115,6 +115,10 @@ export default {
   },
 
   mounted() {
+    this.$refs.dragDelete.addEventListener('click', (e) => {
+      e.stopPropagation();
+      this.deleteDragon(this.dragon.id);
+    });
     // Setup size
     SCALE = this.scale;
 
