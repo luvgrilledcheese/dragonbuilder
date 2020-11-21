@@ -53,6 +53,11 @@
                     <i class="fas fa-chess-pawn"></i>
                   </div>
                 </div>
+
+                <div class="control column is-12">
+                  <button class="button is-large is-fullwidth" disabled
+                  id="submit" @click="createDragon()">Create dragon!</button>
+                </div>
               </div>
 
               <!-- Legs -->
@@ -120,7 +125,13 @@ export default {
   },
 
   methods: {
-    ...mapActions(['fetchHeads', 'fetchBodies', 'fetchLegs']),
+    ...mapActions(['fetchHeads', 'fetchBodies', 'fetchLegs', 'addDragon']),
+
+    createDragon() {
+      this.addDragon(this.dragon).then(() => {
+        this.$router.push('Dragons');
+      });
+    },
   },
 
   computed: mapGetters(['allHeads', 'allBodies', 'allLegs']),
@@ -139,7 +150,7 @@ export default {
       const button = document.getElementById('submit');
       if (newVal === '') {
         button.classList.remove('is-success');
-        button.createAttribute('disabled');
+        button.setAttribute('disabled', true);
       } else {
         button.classList.add('is-success');
         button.removeAttribute('disabled');

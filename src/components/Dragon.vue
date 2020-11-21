@@ -1,6 +1,6 @@
 <template>
     <div class="box is-horizontal-center">
-      <p class="subtitle is-4 has-text-dark has-text-centered">{{dragon.name}}</p>
+      <p class="subtitle is-4 has-text-dark has-text-centered">{{showName}}</p>
       <canvas
         ref="canvas"
         style="border: 0px solid #d0d0d0; border-radius:3px">
@@ -38,12 +38,19 @@ let scaleY;
 
 export default {
   name: 'Dragon',
-  props: ['dragon', 'scale'],
+  props: ['dragon', 'scale', 'isNameVisible'],
   data() {
     return {
       images: [],
       ctx: null,
     };
+  },
+
+  computed: {
+    showName() {
+      if (this.isNameVisible) return this.dragon.name;
+      return '';
+    },
   },
 
   methods: {
@@ -57,10 +64,9 @@ export default {
 
     loadAllImages() {
       this.images = [];
-      this.images.push(this.loadImage(`./assets/images/heads/${this.dragon.headId}.png`));
-      this.images.push(this.loadImage(`./assets/images/bodies/${this.dragon.bodyId}.png`));
-      this.images.push(this.loadImage(`./assets/images/legs/${this.dragon.legId}.png`));
-
+      this.images.push(this.loadImage(`/assets/images/heads/${this.dragon.headId}.png`));
+      this.images.push(this.loadImage(`/assets/images/bodies/${this.dragon.bodyId}.png`));
+      this.images.push(this.loadImage(`/assets/images/legs/${this.dragon.legId}.png`));
       Promise.all(this.images)
         .then((objImages) => {
           this.images = objImages;
@@ -131,6 +137,7 @@ export default {
   },
 
   watch: {
+    dragon: 'redraw',
     'dragon.headId': 'redraw',
     'dragon.bodyId': 'redraw',
     'dragon.legId': 'redraw',
