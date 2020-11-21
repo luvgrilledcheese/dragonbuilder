@@ -10,96 +10,106 @@
         </header>
       </div>
       <div class="section">
-        <div class="columns is-4 is-multiline level" id="body">
-          <div class="column is-4">
-            <div class="" style="">
-              <!-- Head -->
-              <div class="field fullwidth">
-                <div class="control has-icons-left">
-                  <div class="select is-large is-rounded">
-                    <select v-model="dragon.headId">
-                      <option
-                        v-for="head in allHeads"
-                        v-bind:key="head.id"
-                        class="dropdown-item dragon-part"
-                        :value="head.id"
-                      >
-                        {{ head.name }}
-                      </option>
-                    </select>
-                  </div>
-                  <div class="icon is-small is-left has-text-success">
-                    <i class="fas fa-frog"></i>
-                  </div>
-                </div>
-              </div>
 
-              <!-- Body -->
-              <div class="field fullwidth">
-                <div class="control has-icons-left">
-                  <div class="select is-large is-rounded">
-                    <select v-model="dragon.bodyId">
-                      <option
-                        v-for="body in allBodies"
-                        v-bind:key="body.id"
-                        class="dropdown-item dragon-part"
-                        :value="body.id"
-                      >
-                        {{ body.name }}
-                      </option>
-                    </select>
+        <div class="tile is-ancestor">
+          <div class="tile is-vertical is-4">
+            <div class="tile">
+              <div class="column is-12">
+                <div class="" style="">
+                  <!-- Head -->
+                  <div class="field fullwidth">
+                    <div class="control has-icons-left">
+                      <div class="select is-large is-rounded">
+                        <select v-model="dragon.headId">
+                          <option
+                            v-for="head in allHeads"
+                            v-bind:key="head.id"
+                            class="dropdown-item dragon-part"
+                            :value="head.id"
+                          >
+                            {{ head.name }}
+                          </option>
+                        </select>
+                      </div>
+                      <div class="icon is-small is-left has-text-success">
+                        <i class="fas fa-frog"></i>
+                      </div>
+                    </div>
                   </div>
-                  <div class="icon is-small is-left has-text-warning">
-                    <i class="fas fa-chess-pawn"></i>
-                  </div>
-                </div>
-              </div>
 
-              <!-- Legs -->
-              <div class="field fullwidth">
-                <div class="control has-icons-left">
-                  <div class="select is-large is-rounded">
-                    <select v-model="dragon.legId">
-                      <option
-                        v-for="leg in allLegs"
-                        v-bind:key="leg.id"
-                        :value="leg.id"
-                        class="dropdown-item dragon-part"
+                  <!-- Body -->
+                  <div class="field fullwidth">
+                    <div class="control has-icons-left">
+                      <div class="select is-large is-rounded">
+                        <select v-model="dragon.bodyId">
+                          <option
+                            v-for="body in allBodies"
+                            v-bind:key="body.id"
+                            class="dropdown-item dragon-part"
+                            :value="body.id"
+                          >
+                            {{ body.name }}
+                          </option>
+                        </select>
+                      </div>
+                      <div class="icon is-small is-left has-text-warning">
+                        <i class="fas fa-chess-pawn"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Legs -->
+                  <div class="field fullwidth">
+                    <div class="control has-icons-left">
+                      <div class="select is-large is-rounded">
+                        <select v-model="dragon.legId">
+                          <option
+                            v-for="leg in allLegs"
+                            v-bind:key="leg.id"
+                            :value="leg.id"
+                            class="dropdown-item dragon-part"
+                          >
+                            {{ leg.name }}
+                          </option>
+                        </select>
+                      </div>
+                      <div class="icon is-small is-left has-text-info">
+                        <i class="fas fa-socks"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="control column is-12">
+                      <button
+                        class="button is-large is-fullwidth"
+                        disabled
+                        id="submit"
+                        @click="createDragon()"
                       >
-                        {{ leg.name }}
-                      </option>
-                    </select>
-                  </div>
-                  <div class="icon is-small is-left has-text-info">
-                    <i class="fas fa-socks"></i>
-                  </div>
+                        Create dragon!
+                      </button>
+                    </div>
                 </div>
               </div>
-              <div class="control column is-12">
-                  <button
-                    class="button is-large is-fullwidth"
-                    disabled
-                    id="submit"
-                    @click="createDragon()"
-                  >
-                    Create dragon!
-                  </button>
-                </div>
             </div>
           </div>
-          <div class="column is-8 has-text-centered">
-            <div class="field">
-              <div class="control">
-                <input
-                  id = "name"
-                  v-model="dragon.name"
-                  class="input is-large title has-text-centered is-danger"
-                  type="text"
-                  placeholder="Name your dragon..."
-                />
+          <div class="tile is-parent is-vertical">
+            <article class="tile is-child">
+              <div class="field">
+                <div class="control">
+                  <input
+                    id = "name"
+                    v-model="dragon.name"
+                    class="input input-start is-large title has-text-centered is-info"
+                    type="text"
+                    placeholder="Name your dragon..."
+                  />
+                </div>
               </div>
-            </div>
-            <Dragon :dragon="dragon" :scale="600" />
+            </article>
+
+            <article class="tile is-child has-text-centered">
+              <Dragon :dragon="dragon" :scale="600" />
+            </article>
           </div>
         </div>
       </div>
@@ -150,14 +160,17 @@ export default {
     'dragon.name': (newVal, oldVal) => {
       const button = document.getElementById('submit');
       const nameInput = document.getElementById('name');
+      nameInput.classList.remove('input-start');
       if (newVal === '') {
         button.classList.remove('is-success');
         button.setAttribute('disabled', true);
         nameInput.classList.add('is-danger');
+        nameInput.classList.add('input-bad');
       } else {
         button.classList.add('is-success');
         button.removeAttribute('disabled');
         nameInput.classList.remove('is-danger');
+        nameInput.classList.remove('input-bad');
       }
     },
   },

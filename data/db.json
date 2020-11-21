@@ -96,14 +96,14 @@
   "dragons": [
     {
       "id": 1,
-      "name": "FAT BOI CAT",
+      "name": "I love cats",
       "headId": 1,
       "bodyId": 2,
-      "legId": 1
+      "legId": 3
     },
     {
       "id": 2,
-      "name": "Muscular Horse",
+      "name": "Muscular Sheep",
       "headId": 8,
       "bodyId": 3,
       "legId": 2
@@ -138,10 +138,17 @@
     },
     {
       "name": "Stacey man",
-      "headId": 1,
-      "bodyId": 4,
+      "headId": 8,
+      "bodyId": 1,
       "legId": 1,
       "id": 9
+    },
+    {
+      "name": "Sheep Go Gun Gun",
+      "headId": 8,
+      "bodyId": 7,
+      "legId": 6,
+      "id": 10
     }
   ]
 }

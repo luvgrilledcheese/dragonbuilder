@@ -15,6 +15,12 @@
     }
 }
 
-.removeclicks > * {
-  pointer-events: none;
+.input-start::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: hsl(217, 71%, 53%);
+  opacity: 0.75; /* Firefox */
+}
+
+.input-bad::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color:hsl(348, 100%, 61%);
+  opacity: 0.75; /* Firefox */
 }
