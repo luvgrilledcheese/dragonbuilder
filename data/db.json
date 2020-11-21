@@ -137,18 +137,18 @@
       "id": 7
     },
     {
-      "name": "Stacey man",
-      "headId": 8,
-      "bodyId": 1,
-      "legId": 1,
-      "id": 9
-    },
-    {
       "name": "Sheep Go Gun Gun",
       "headId": 8,
       "bodyId": 7,
       "legId": 6,
       "id": 10
+    },
+    {
+      "name": "Stacey Man",
+      "headId": 8,
+      "bodyId": 6,
+      "legId": 5,
+      "id": 11
     }
   ]
 }

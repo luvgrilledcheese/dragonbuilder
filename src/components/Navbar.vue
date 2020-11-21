@@ -11,13 +11,6 @@
         <router-link to="/Parts" class="navbar-item noHover">Parts</router-link>
         <router-link to="/About" class="navbar-item noHover">About</router-link>
       </div>
-      <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons">
-          <router-link to="/Admin" class="button"><strong>Admin</strong></router-link>
-        </div>
-      </div>
-    </div>
     </div>
   </nav>
 </template>

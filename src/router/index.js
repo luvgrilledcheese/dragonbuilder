@@ -2,7 +2,6 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import Parts from '../views/Parts.vue';
-import Admin from '../views/Admin.vue';
 import Dragons from '../views/Dragons.vue';
 import Create from '../views/Create.vue';
 import Edit from '../views/Edit.vue';
@@ -27,11 +26,6 @@ const routes = [
     path: '/Parts',
     name: 'Parts',
     component: Parts,
-  },
-  {
-    path: '/Admin',
-    name: 'Admin',
-    component: Admin,
   },
   {
     path: '/Dragons',
